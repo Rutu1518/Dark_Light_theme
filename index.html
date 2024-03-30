@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 27</title>
+    <style>
+        .container{
+            margin: 10px 0;
+            padding: 10px;
+            
+        }
+        .theme-icon{
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            /* padding: 5px; */
+            border-radius: 5px; 
+            background-color: white;           
+        }
+        .active{
+            border: 1px solid black;
+        }
+        .theme-dark{
+            background-color: black;
+            color: white;
+        }
+        .theme-light{
+            background-color: white;
+            color: black;
+        }
+        p{
+            padding-top: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        h1{
+            font-size: 50px;
+            text-align: center;
+        }
+    </style> 
+</head>
+<body id="body">
+    <div class="container">
+        <img src="./img/Dark_theme.png" class="theme-icon" id="dark" onclick="darkmode()"/>
+        <img src="./img/Light_theme.png" class="theme-icon" id="light" onclick="lightmode()"/>
+        <h1>This is Dark And Light Mode Theme Changer</h1>
+       
+        <p>
+            a light background with dark text, while dark theme is a dark background with light text.
+             Usually, images and colors are chosen to complement both which can create a very different 
+             feel depending upon which theme you are using.
+       
+    
+    </div>
+
+   
+<script>
+        function darkmode(){
+            const imgDark =document.getElementById("dark");
+            imgDark.classList.add("active");
+
+            const imgLight = document.getElementById("light");
+            imgLight.classList.remove("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-dark";
+        }
+        function lightmode(){
+            const imgDark =document.getElementById("dark");
+            imgDark.classList.remove("active");
+
+            const imgLight = document.getElementById("light");
+            imgLight.classList.add("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-light";
+        }
+    </script>
+</body>
+</html>
